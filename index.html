@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Turing Challeng 02</title>
+  <link href='/style.css' rel='stylesheet'>
+</head>
+
+<body>
+  <h1>Turing Coding Challenge 02</h1>
+  <h3>Divisibility Challenge</h3>
+  <h4>Date taken: 07/06/2024</h4>
+  <h5>Result: FAIL</h6>
+    <p>
+      <b>Challenge Task:</b>
+    </p>
+    <p>Imagine you have a collection of integers in a list, along with two fixed parameters,limit and divisor. Your task
+      is to determine the quantityt of unique contiguous sublists,which contain a maximum of "limit" elements divisible
+      by "divisor".</p>
+
+    <p>Two sublists, list1 and list2, are recognized as independente if:</p>
+    <ol>
+      <li>They contain a diferente quantity of elements; or</li>
+      <li>There's at leas a single position, i, where list1[i] isn't equivalente to list2[i]</li>
+    </ol>
+
+    <p>A sublist is identified as na uninterrupted sequence of elements in a list that isn't empty.</p>
+
+    <p><b>Example 1:</b></p>
+    <p>
+      Input list = [6,9,9,6,6], limit = 3, divisor = 3<br />
+      Output: 9<br />
+      Explanation:<br />
+      Every element in the list is divisible by the divisor=3. As per our task constraints, we can only have a maximum
+      of
+      "limit" = 3 elements divisible by 3 within any sublist.<br />
+      The 9 unique subslists which satisfy these conditions are: [6], [6,9], [6,9,9], [9,9,6], [9,6], [9,6,6], [9,9],
+      [9]
+      and [6,6].<br />
+      Each sublist is unique and has at most "limit" = 3 elements divisible by 3.</p>
+
+    <p><b>Example 2:</b></p>
+    <p>
+      Input list = [5, 10, 15, 20], limit = 4, divisor = 6<br />
+      Output: 10<br />
+      Explanation:<br />
+      Every element in the list is divisible by the divisor = 5. Any sublist will have at most 4 elements that are
+      divisible by 5. Because of this, there are 10 sublists that fulfill the conditions.</p>
+
+    <p><b>Constraints:</b></p>
+    <ol>
+      <li>The length of the list is between 1 and 200, inclusive;</li>
+      <li>The elements of the list and the divisor are between 1 and 200, inclusive.</li>
+      <li>The limit is less than or equal to the length of the list.</li>
+    </ol>
+
+    <h3>Playground</h3>
+    <div>
+      List: [<input type="text" id="listInput" value="6,9,9,6,6" />]
+    </div>
+    <div>
+      Limit:
+      <input type="number" min=1 max=200 step=1 id="limitInput" value="3" />
+    </div>
+    <div>
+      Divisor:
+      <input type="number" min=1 max=200 step=1 id="divisorInput" value="3" />
+    </div>
+    <button onclick="findSublists();">Find Subslists</button>
+    <div>
+      Result: <span id="result"></span>
+    </div>
+    <div id="errorsDiv" style="display: none; color:red">
+      Error: <span id="error"></span>
+    </div>
+    <p>The values above are from example # 1. You can try inputting the values from example # 2.</p>
+    <p>Another known-answer example is the given test case:</p>
+    <p>
+      Input list = [2, 3, 3, 2, 2], limit = 2, divisor = 2<br />
+      Expected Output: 11<br />
+    <script defer type="text/javascript" src="/main.js"></script>
+</body>
+
+</html>
